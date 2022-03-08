@@ -1,0 +1,11 @@
+const gm = require('avris-generator');
+
+const pesel = gm.generate('PL', 'pesel', {gender: 'm'});
+
+try {
+    const data = gm.validate('PL', 'pesel', '12345678900');
+    // valid
+} catch (e) {
+    // invalid
+    alert(e.message);
+}
